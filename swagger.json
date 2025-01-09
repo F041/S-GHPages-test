@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "/S-GHPages-test" // Name of the repository */
+      "url": "/S-GHPages-test" // Name of the repository
     }
   ],
   "paths": {

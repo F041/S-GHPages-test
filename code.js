@@ -31,4 +31,7 @@ window.onload = function () {
           text: async () => JSON.stringify(result),
         };
       }
-      return
+      return request; // Let other requests pass through without modification
+    },
+  });
+};

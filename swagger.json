@@ -36,4 +36,20 @@
         ],
         "responses": {
           "200": {
-            "description": "The result o
+            "description": "The result of addition",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -17,8 +17,8 @@ window.onload = function () {
           return {
             ok: true,
             status: 400,
-            json: async () => ({ error: "Invalid input" }),
-            text: async () => JSON.stringify({ error: "Invalid input" }),
+            headers: { "Content-Type": "application/json" }, // Add Content-Type header
+            json: async () => ({ error: "Invalid input" }), // Return error in JSON format
           };
         }
 
@@ -27,8 +27,8 @@ window.onload = function () {
         return {
           ok: true,
           status: 200,
-          json: async () => result,
-          text: async () => JSON.stringify(result),
+          headers: { "Content-Type": "application/json" }, // Add Content-Type header
+          json: async () => result, // Return the result in JSON format
         };
       }
       return request; // Let other requests pass through without modification

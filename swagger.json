@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "/S-GHPages-test" 
+      "url": "/S-GHPages-test"
     }
   ],
   "paths": {
@@ -63,6 +63,4 @@
           }
         }
       }
-    }
-  }
-}
+    

@@ -6,7 +6,7 @@ window.onload = function () {
     layout: "StandaloneLayout",
     requestInterceptor: (request) => {
       // Intercept the request for the `/add` endpoint
-      if (request.url.startsWith("/add") && request.method === "GET") {
+      if (request.url.startsWith("/S-GHPages-test/add") && request.method === "GET") {
         const urlParams = new URLSearchParams(request.url.split("?")[1]);
         const a = parseFloat(urlParams.get("a"));
         const b = parseFloat(urlParams.get("b"));

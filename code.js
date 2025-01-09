@@ -5,12 +5,24 @@ window.onload = function () {
     presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
     layout: "StandaloneLayout",
     requestInterceptor: (request) => {
-      // Intercept the request for the `/add` endpoint
-      if (request.url.startsWith("/S-GHPages-test/add") && request.method === "GET") {
+      if (request.url.includes("/add") && request.method === "GET") {
+        // Parse query parameters
         const urlParams = new URLSearchParams(request.url.split("?")[1]);
         const a = parseFloat(urlParams.get("a"));
         const b = parseFloat(urlParams.get("b"));
-        const result = { result: a + b }; // Perform addition
+
+        // Check for valid inputs
+        if (isNaN(a) || isNaN(b)) {
+          return {
+            ok: true,
+            status: 400,
+            json: async () => ({ error: "Invalid input" }),
+            text: async () => JSON.stringify({ error: "Invalid input" }),
+          };
+        }
+
+        // Perform addition
+        const result = { result: a + b };
         return {
           ok: true,
           status: 200,

@@ -5,6 +5,7 @@ window.onload = function () {
     presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
     layout: "StandaloneLayout",
     requestInterceptor: (request) => {
+      // Intercept the request for the `/add` endpoint
       if (request.url.includes("/add") && request.method === "GET") {
         // Parse query parameters
         const urlParams = new URLSearchParams(request.url.split("?")[1]);
@@ -30,7 +31,4 @@ window.onload = function () {
           text: async () => JSON.stringify(result),
         };
       }
-      return request;
-    },
-  });
-};
+      return

@@ -5,8 +5,8 @@ window.onload = function () {
     presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
     layout: "StandaloneLayout",
     requestInterceptor: (request) => {
-      // Intercept the request for the `/add` endpoint
-      if (request.url.includes("/add") && request.method === "GET") {
+      // Intercept the request for the `/predict` endpoint
+      if (request.url.includes("/predict") && request.method === "GET") {
         // Parse query parameters
         const urlParams = new URLSearchParams(request.url.split("?")[1]);
         const a = parseFloat(urlParams.get("a"));

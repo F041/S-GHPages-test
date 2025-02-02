@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Simple Math API",
-    "description": "An API that performs simple math on the client-side.",
+    "title": "Stat Model API",
+    "description": "An API that gives the prediction of a statistcal model",
     "version": "1.0.0"
   },
   "servers": [
@@ -13,7 +13,7 @@
   "paths": {
     "/add": {
       "get": {
-        "summary": "Add two numbers",
+        "summary": "Add the value for the two variables",
         "parameters": [
           {
             "name": "a",
@@ -22,7 +22,7 @@
             "schema": {
               "type": "number"
             },
-            "description": "The first number"
+            "description": "The first variable"
           },
           {
             "name": "b",
@@ -31,12 +31,12 @@
             "schema": {
               "type": "number"
             },
-            "description": "The second number"
+            "description": "The second variable"
           }
         ],
         "responses": {
           "200": {
-            "description": "The result of addition",
+            "description": "Model prediction",
             "content": {
               "application/json": {
                 "schema": {

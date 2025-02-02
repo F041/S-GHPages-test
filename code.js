@@ -23,7 +23,7 @@ window.onload = function () {
         }
 
         // Perform addition
-        const result = { result: a + b };
+        const result = { result: 1.444*a + 2.3*b+0.098 };
         return {
           ok: true,
           status: 200,
